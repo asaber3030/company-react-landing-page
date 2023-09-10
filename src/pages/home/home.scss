@@ -1,0 +1,85 @@
+@import "../../assets/css/global";
+
+#home {
+  background: url("../../assets/images/homebg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .content {
+    padding: 25px 35px;
+    width: 100%;
+    .container-main {
+      display: grid;
+      grid-template-columns: 1fr .5fr;
+      gap: 45px;
+      justify-content: space-between;
+    }
+    > div {
+      cursor: pointer;
+      h1.title {
+        font-size: 55px;
+        line-height: 1.21;
+        font-weight: 900;
+        color: #f1f1f1;
+      }
+      p.description {
+        width: 55%;
+        font-size: 16px;
+        color: gray;
+      }
+    }
+    .contact-form {
+
+      background-color: rgb(22 20 20 / 90%);
+      box-shadow: 1px 7px 6px 0px #000000;
+      padding: 15px;
+      border-radius: 5px;
+      height: fit-content;
+      h1 {
+        svg { margin-right: 8px; }
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 25px;
+        font-weight: bold;
+        color: lightgray;
+      }
+      input {
+        color: #e5e5e5;
+      }
+      .actions {
+        @include flexBox(space-between, center);
+        a {
+          color: gray;
+          &:hover { text-decoration: underline }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  #home {
+    display: block !important;
+    padding-top: 150px;
+    .container-main {
+      display: block !important;
+      .title {
+        font-size: 35px !important;
+        br {
+          display: none;
+        }
+      }
+      .description {
+        width: 100% !important;
+      }
+      .contact-form {
+
+        margin-top: 15px;
+      }
+    }
+  }
+}

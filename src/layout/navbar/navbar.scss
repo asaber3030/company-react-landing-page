@@ -1,0 +1,44 @@
+@import "../../assets/css/global";
+
+.app-navbar {
+  @include flexBox(space-between, center);
+  background-color: transparent;
+  padding: 25px 35px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 110000;
+  .left-side {
+    a {
+      font-size: 25px;
+      font-family: $title-font;
+      font-weight: 900;
+      color: $main-color;
+    }
+  }
+  .right-side {
+    @include flexBox();
+    gap: 25px;
+    list-style: none;
+    a {
+      @include transition();
+      font-size: 17px;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 700;
+      &:hover {
+        color: $main-color;
+      }
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  .app-navbar {
+    @include flexBox(center, center);
+    .left-side {
+      margin-bottom: 18px;
+    }
+  }
+}

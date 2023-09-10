@@ -1,0 +1,94 @@
+@import "../../assets/css/global";
+
+#pricing {
+  border-top: 1px solid #ddd;
+  padding: 50px;
+  background-color: #f1efef;
+  .header {
+    h1 { font-weight: bold; }
+  }
+  .plans {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(3, minmax(400px, 1fr));
+    margin-top: 100px;
+    .plan {
+      box-shadow: 0 2px 10px #ddd;
+      background-color: #FFF;
+      padding: 25px;
+      border-radius: 5px;
+      height: fit-content;
+      .header {
+        position: relative;
+        .icon {
+          box-shadow: -1px 5px 4px #f9f9f9;
+          background-color: #FFF;
+          position: absolute;
+          top: -70px;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img { width: 60px; height: 60px; }
+        }
+      }
+      .titles {
+        margin-top: 50px;
+        h1 {
+          font-weight: bold;
+          text-transform: uppercase;
+          color: #444;
+          font-size: 25px;
+          text-align: center;
+        }
+        p {
+          font-size: 55px;
+          text-align: center;
+          font-weight: bold;
+          color: $main-color;
+          span:first-of-type, span:last-of-type { font-size: 20px; }
+        }
+      }
+      .features {
+        h6 {
+          color: gray;
+          text-transform: uppercase;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          li {
+            line-height: 2;
+            svg {
+              color: $main-color;
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+      .plan-footer {
+        margin: 15px 0 0;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  #pricing {
+    padding: 22px;
+    .plans {
+      display: block !important;
+      .plan {
+        margin-bottom: 60px;
+      }
+    }
+  }
+}

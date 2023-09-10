@@ -1,0 +1,57 @@
+@import "../../assets/css/global";
+
+#reviews {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  .slider {
+    .item {
+      text-align: center;
+      p {
+        max-width: 65%;
+        margin: auto;
+      }
+      h1 {
+        font-weight: bold;
+        margin: 15px 0;
+
+      }
+      .stars {
+        margin: 40px 0 0;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        svg { color: $yellow-dark }
+      }
+    }
+    .item.not-active {
+      display: none;
+    }
+  }
+  .slider-navigator-container {
+    @include flexBox(center, center);
+  }
+  .slider-navigator {
+    @include flexBox(center, center);
+    @include transition();
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ddd;
+    &:hover { background-color: $main-color; color: #FFF; }
+    svg { font-size: 20px; }
+  }
+}
+
+@media (max-width: 1366px) {
+  #reviews {
+    padding: 50px 10px;
+    gap: 25px;
+    .slider {
+      .item p { max-width: 100% }
+    }
+  }
+}

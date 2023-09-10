@@ -1,0 +1,111 @@
+@import "../../assets/css/global";
+
+#services {
+  .services-list {
+    text-align: center;
+    padding: 78px 25px;
+    > h1 {
+      font-weight: bold;
+      font-size: 38px;
+    }
+    > p {
+      font-size: 15px;
+      color: gray;
+      width: 55%;
+      margin: 18px auto;
+    }
+    .items {
+      display: flex;
+      margin-top: 80px;
+      gap: 80px;
+      justify-content: space-around;
+      align-items: center;
+      svg {
+        font-size: 45px;
+        color: $main-color;
+        margin-bottom: 15px;
+      }
+      h5 {
+        font-size: 20px;
+        font-weight: 400;
+      }
+      p {
+        font-size: 18px;
+        color: gray;
+      }
+    }
+  }
+  .services-images {
+    background-color: #ddd;
+    padding: 50px 25px;
+    display: block !important;
+    .item {
+      @include flexBox(center, center);
+      gap: 25px;
+      &:not(:last-of-type) { margin-bottom: 50px; padding-bottom: 50px;
+        border-bottom: 1px solid #d5d5d5; }
+      &:last-of-type { flex-direction: row-reverse }
+      .left-side {
+        flex: 1;
+        text-align: center;
+        img {
+          max-width: 100%;
+          width: 500px;
+        }
+      }
+      .right-side {
+        flex: 1;
+        padding: 0 100px;
+        h1 {
+          font-weight: bold;
+        }
+        p {
+          color: gray;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            line-height: 2;
+            svg { margin-right: 5px; }
+          }
+        }
+        button {
+          margin: 15px 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  #services {
+    .services-list {
+      > h1 {
+        font-size: 22px;
+      }
+      > p {
+        max-width: 100%;
+        width: 100%;
+      }
+      .items {
+        display: block;
+        .item {
+          margin-bottom: 25px;
+        }
+      }
+    }
+    .services-images {
+      .item {
+        display: block !important;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        .right-side {
+          padding: 10px;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}

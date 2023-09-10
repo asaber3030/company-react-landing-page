@@ -1,0 +1,84 @@
+@import "../../assets/css/global";
+
+#features {
+  background-color: #ebebeb;
+  padding: 40px 40px 0;
+  .features-header {
+    text-align: center;
+    h1 {
+      font-weight: bold;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      span { color: $main-color }
+    }
+    .hr { width: 50px; margin: 5px auto; background-color: #000000; height: 2px; }
+    .buttons-list {
+      margin: 25px 0;
+      @include flexBox(center, center);
+      .button-container {
+        font-weight: bold;
+        padding: 10px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        &.active {
+          background-color: $main-color;
+          color: #FFF;
+        }
+      }
+    }
+    .quote {
+      max-width: 78%;
+      margin: 10px auto;
+      position: relative;
+    }
+    p {
+      span:first-of-type { margin-right: 15px }
+      span:last-of-type { margin-left: 15px }
+      color: #444;
+      line-height: 1.7;
+    }
+  }
+  .list-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-around;
+    width: 78%;
+    margin: auto;
+    .feature {
+      padding: 25px;
+      h5 {
+        font-weight: bold;
+        padding: 15px 0;
+        color: #555;
+        svg { margin-right: 7px; }
+      }
+      p {
+        font-size: 14px;
+        max-width: 80%;
+        line-height: 1.8;
+      }
+    }
+  }
+}
+
+@media (max-width: 1366px) {
+  #features {
+    .features-header {
+      .quote {
+        max-width: 100%;
+        p { font-size: 14px; }
+      }
+    }
+    .list-features {
+      display: block;
+      width: 100%;
+      .feature {
+        margin-bottom: 15px;
+        padding: 0;
+      }
+      p {
+        max-width: 100% !important;
+      }
+    }
+  }
+}
